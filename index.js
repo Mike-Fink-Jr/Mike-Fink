@@ -21,10 +21,6 @@ app.use(device.capture());
 device.enableViewRouting(app);
 device.enableDeviceHelpers(app);
 
-app.get('/.well-known/pki-validation/', function(req,res){
-   res.send('BCBF20F9416DD1845B88B8BC5048DF1D.txt');
-  var file = __dirname + 'BCBF20F9416DD1845B88B8BC5048DF1D.txt';
-  res.download(file); // Set disposition and send it});
 
 app.get('/', function(req, res) {
   res.render('pages/home',{route: "/", title:"Mike-Fink.com", index:0});
