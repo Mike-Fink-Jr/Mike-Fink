@@ -1,0 +1,30 @@
+<% include ./../partials/header.ejs %>
+  <script type="text/javascript"><% include ../scripts/home_typer.js %></script>
+    <div id="home">
+      <div>
+        <div>
+          <div class="landing-text">
+            <% if(is_desktop) { %>
+            <h1>
+              Mike Fink<br> 
+            <% } else { %>
+              <h2> 
+            <% } %>
+              Software Engineer<br>
+              Penn State '18<br><br><br>
+            
+            <% if(is_desktop) { %> </h1> 
+            <% } else { %> </h2> <% } %>
+            
+            <h1>
+              <span
+                class="txt-rotate typed-text"
+                data-period="800"
+                data-rotate='[ "AI & Deep Learning", "Systems Programming", "Web Development", "Back-End Development" ]'>
+              </span>
+            </h1>
+          </div>
+        <div>
+      </div>
+    </div>
+<% include ./../partials/footer.ejs %>

@@ -1,0 +1,7 @@
+{
+  "name": "Mike Fink's Personal Website",
+  "description": "Personal website/online resume",
+  "repository": "https://github.com/Mike-Fink-Jr/Percy-Website",
+  "keywords": ["node", "express", "heroku", "website", "personal", "professional", "resume"],
+  "image": "heroku/nodejs"
+}

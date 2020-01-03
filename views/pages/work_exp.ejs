@@ -1,0 +1,67 @@
+<% include ./../partials/header.ejs %>
+
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css'>
+
+
+  
+</head>
+
+<body>
+
+  
+<div class="work-container" style="overflow: scrollable">
+    <div class="timeline row">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div id="w1-slide" class="swiper-slide" style="background-image: url('/images/raytheon2.jpg')" data-year="2019">
+                    <div class="swiper-slide-content"><span class="timeline-year">2019</span>
+                        <h4 class="timeline-title">Raytheon</h4>
+                        <p class="timeline-text">Software Engineer</p>
+                    </div>
+                </div>
+                <div id="w2-slide" class="swiper-slide" style="background-image: url('/images/psu.JPG');" data-year="2018">
+                    <div class="swiper-slide-content"><span class="timeline-year">May 2018</span>
+                        <h4 class="timeline-title">Penn State University</h4>
+                        <p class="timeline-text">Graduated with a Bachelors of Science in Computer Science.<br> With minors in "Mathematics" and "Digital Entrepreneurship & Innovation"</p>
+                    </div>
+                </div>
+                <div id="w3-slide" class="swiper-slide" style="background-image: url('/images/fidelity2.png');" data-year="2017">
+                    <div class="swiper-slide-content"><span class="timeline-year">Summer 2017</span>
+                        <h4 class="timeline-title">Fidelity Investments</h4>
+                        <p class="timeline-text">Technical Intern</p>
+                    </div>
+                </div>
+                <div id="w4-slide" class="swiper-slide" style="background-image: url('/images/fidelity1.jpg');" data-year="2016">
+                    <div class="swiper-slide-content"><span class="timeline-year">Summer 2016</span>
+                        <h4 class="timeline-title">Fidelity Investments</h4>
+                        <p class="timeline-text">Technical Intern</p>
+                    </div>
+                </div>
+                <div id="w5-slide" class="swiper-slide" style="background-image: url('/images/library.png');" data-year="2015">
+                    <div class="swiper-slide-content"><span class="timeline-year">Summer 2015</span>
+                        <h4 class="timeline-title">Collmer Law Firm</h4>
+                        <p class="timeline-text">Intern</p>
+                    </div>
+                </div>
+                <div id="w6-slide" class="swiper-slide" style="background-image: url('/images/token.PNG');" data-year="2014">
+                    <div class="swiper-slide-content"><span class="timeline-year">2014</span>
+                        <h4 class="timeline-title">High School Senior Year</h4>
+                        <p class="timeline-text">I first discovered my love of programming, and decided to pursue a career in coding</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js'></script>
+
+  
+
+    <script><% include ./../scripts/timeline.js %></script>
+
+
+<% include ./../partials/footer.ejs %>

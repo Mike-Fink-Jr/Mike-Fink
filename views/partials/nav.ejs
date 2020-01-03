@@ -1,0 +1,98 @@
+<header>
+  <div id="topheader">
+    <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-primary">
+      <div class="container-fluid">
+        <% if (is_desktop) { %>
+            <a class="navbar-brand" href="/">Mike-Fink.com</a>
+          <% } else { %>
+            <a class="navbar-brand"> <%= title %></a>
+        <% } %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav">
+            <li class="nav-item" id="nav-0">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item" id="nav-1">
+              <a class="nav-link" href="/exp">Work Exp</a>
+            </li>
+            <li class="nav-item" id="nav-2">
+              <a class="nav-link" href="/skills">Skills </a>
+            </li>
+            <li class="nav-item" id="nav-3">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item" id="nav-4">
+              <a class="nav-link" href="/contact">Contact Me</a>
+            </li>
+            <li class="nav-item" id="nav-5"> 
+              <a class="nav-link" href="/resume">Resume</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<body>
+<% if(is_desktop && index !==1 ) { %>
+  <div class="desktop" >
+<% } else if(is_desktop){ %>
+<div>
+<% } else { %>
+  <div class="mobile">
+<% } %>
+
+
+
+
+
+<script>
+
+
+
+var i = <%= index %>
+var n = "#nav-"+i
+$(n).addClass('active')
+
+</script>
+
+<style>
+
+
+  .navbar-nav >li{
+    padding-left:15px;
+    padding-right:15px;
+      
+  }
+  .navbar-brand {
+    padding-left:50px;
+    padding-right:30px;
+      
+  }
+  
+  .navbar .navbar-collapse {
+      text-align: center;
+  }
+
+#topheader .navbar-nav li > a {
+  text-transform: capitalize;
+  color: #white;
+  transition: background-color 0.2s, color 0.2s;
+}
+#topheader .navbar-nav li > a:hover, #topheader .navbar-nav li > a:focus {
+  background-color: #222;
+
+}
+#topheader .navbar-nav li.active > a {
+  background-color: #222;
+
+
+  padding-bottom:0;
+  height:100%;
+  width:100%
+}
+
+</style>

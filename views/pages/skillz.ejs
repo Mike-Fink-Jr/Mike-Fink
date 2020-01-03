@@ -1,0 +1,93 @@
+<% include ./../partials/header.ejs %>
+
+
+<body>
+    <% if (is_desktop) { %>
+        <div class="skills-page"> 
+            <div class="row" style="margin:0; z-index:999;">
+                <div class="text-center col-md-12" style="" id="skills-title">
+                    <h1> My Skills</h1>
+                    <a href="#" id="tog" class="toggle toggle--on"></a>
+                </div>
+            </div>
+            <div class="row col col-md-10 col-md-offset-2 skill-row mx-auto text-center ">
+                
+                <div  id="skills-2D" class="col-md-9" style= " display:none;">
+                <% include ./../pages/skills-2D.ejs %>
+                </div>
+                <div class="col-md-9 " style=" z-index:10" id="skills-obj">
+                </div>
+
+                <div class="col-md-3" > 
+                    <ul class=" list-group" id="skills-list"> </ul>
+                </div>
+
+            </div>
+        </div>
+    <% } else { %>
+        <div style="padding-top: 10%" id="skills-2D">
+        <% include ./../pages/skills-2D.ejs %>
+        </div>
+    <% } %>
+        
+
+    <% if (is_desktop) { %>
+        <% include ./../pages/skills-3D.ejs %>
+    <% } %>
+<script>
+
+    function getSkills(){return[
+        {name: "Python",value: 91 , time: 6 },  
+        {name: "Angular.js",value: 50 , time: 1},
+        {name: "JavaScript",value: 93 , time: 3} ,
+        {name: "jQuery",value: 75 , time:2 }, 
+        {name: "GO",value: 68 , time:1.5 }, 
+        {name: "CSS",value: 60 , time:3 }, 
+        {name: "VueJS" , value: 77 , time: 1 }, 
+        {name: "HTML",value: 75 , time: 3 },
+        {name: "MIPS" , value: 56 , time: 2 },
+        {name: "Node.js",value: 90 , time: 3 }, 
+        {name: "Visualforce" , value: 43 , time: .5 },
+        {name: "Verilog" , value: 61 , time: 1  },
+        {name: "C++", value: 81 , time: 4 },
+        {name: "C#",value: 72 , time: 1.5 },
+        {name: "C", value: 87 , time: 3.5 }, 
+        {name: "APEX" , value: 52 , time: .5 },       
+        {name: "Scheme" , value: 78 , time: 1 },
+        {name: "Java" , value: 89 , time: 7 }
+    ]}
+var skills_list = getSkills()
+ function compare(a, b){  if (a.value > b.value) return -1;  if (b.value > a.value) return 1;  return 0;}
+
+    getSkills().sort(compare).forEach(function(s){ // creates the list on the side of the 3d chart
+        $('#skills-list').append("<li class='list-group-item'> "+ s.name+" -- "+s.value+"%  -- "+s.time+" Years Experience" +" </li>");
+    });
+    
+    
+    
+    
+    
+    $('.toggle').click(function(e) {
+    var toggle = this;
+    var is2D = $('#tog').hasClass('toggle--on');
+    if(!is2D){
+        $('#skills-2D').hide()
+        $('#skills-obj').show()
+    } else{
+        $('#skills-obj').hide()
+        $('#skills-2D').show()
+    }
+    e.preventDefault();
+    
+    $(toggle).toggleClass('toggle--on')
+            .toggleClass('toggle--off')
+            .addClass('toggle--moving');
+    
+    setTimeout(function() {
+        $(toggle).removeClass('toggle--moving');
+    }, 200)
+    });
+</script>
+
+
+<% include ./../partials/footer.ejs %>

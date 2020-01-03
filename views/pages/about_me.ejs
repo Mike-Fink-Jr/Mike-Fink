@@ -1,0 +1,39 @@
+
+  <% include ./../partials/header.ejs %>
+  <!--<script src="scripts/about-me.js"></script>-->
+    <div class="container-fluid about-me">
+    <% if(is_desktop) { %>
+      <div class="row" >
+        <div class="col-4 col-offset-4">
+          <h1 >About me</h1><br>
+        </div>
+      </div>
+      <% }%>
+      <div class="row">   
+        <div class="col">
+          <img src="/images/about-me.jpg" style= "z-index:10; display: block;max-width:50vw;height:auto" class="img-fluid "  alt="My brothers and I">
+        </div>
+        <div class="col col-offset-4" style="height:100%;">
+          <h3>Education </h3>
+          <p> The Pennsylvania State University <br>
+                Major: Computer Science<br>
+                Minors: "Mathematics"  &  "Digital Entrepreneurship and Inovation" 
+          </p>
+          <h3>Hobbies</h3>
+          <ul>
+            <li>Brazilian Jiu-Jitsu / MMA </li>
+            <li>Sailing</li>
+            <li>Hunting / Fishing</li>
+            <li>Woodworking</li>
+            <li> Welding / Metalworking</li>
+            <li>Snowboarding</li>
+          </ul>
+          <h3>Certifications</h3>
+          <ul>
+          <li>Comptia Security+ </li>
+          </ul>
+        </div>
+
+      </div>          
+    </div>
+  <% include ./../partials/footer.ejs %>

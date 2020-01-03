@@ -1,0 +1,267 @@
+
+<!-- ---------------------------------------------------------
+/////////////////////////////////////////////////////////////
+            2D SKILLS PARTIAL
+/////////////////////////////////////////////////////////////
+---------------------------------------------------------- -->
+<!-- <link rel="stylesheet" type="text/css" href="css/skills.css"> -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+
+
+<script type="text/javascript">
+      var skills_dic = [
+        {name: "Python",value: 91 , time: 6 },  
+        {name: "Angular.js",value: 50 , time: 1},
+        {name: "Javascript",value: 93 , time: 3} ,
+        {name: "jQuery",value: 75 , time:2 }, 
+        {name: "GO",value: 68 , time:1.5 }, 
+        {name: "CSS",value: 60 , time:3 }, 
+        {name: "VueJS" , value: 77 , time: 1 }, 
+        {name: "HTML",value: 75 , time: 3 },
+        {name: "MIPS" , value: 56 , time: 2 },
+        {name: "Node.js",value: 90 , time: 3 }, 
+        {name: "Visualforce" , value: 43 , time: .5 },
+        {name: "Verilog" , value: 61 , time: 1  },
+        {name: "C++", value: 81 , time: 4 },
+        {name: "C#",value: 72 , time: 1.5 },
+        {name: "C", value: 87 , time: 3.5 }, 
+        {name: "APEX" , value: 52 , time: .5 },       
+        {name: "Scheme" , value: 78 , time: 1 },
+        {name: "Java" , value: 89 , time: 7 }
+    ]
+var names=[]
+var vals =[] 
+var length = {}
+skills_dic.forEach(function(obj){ 
+        names.push(obj.name);
+        vals.push(obj.value);
+        length[obj.name]= obj.time
+        
+    }
+)
+var entry_count = skills_dic.length
+
+$(function () {
+    
+    $('#skills-2D').highcharts({
+        
+      chart: {
+          backgroundColor: '#222222',
+          polar: true,
+          type: 'line'
+
+      },
+      credits: {
+      enabled: false
+    },
+      title: {
+          text: ''
+      },
+      
+      pane: {
+          startAngle: 0,
+          endAngle: 360
+      },
+  
+      xAxis: {
+        type: 'category',
+          tickInterval: 1,
+          categories:names,
+
+          min: 0,
+          max: entry_count,
+          tickmarkPlacement: 'on',
+
+          lineWidth: 0,
+          labels: {
+            style: {
+                color: 'white'
+            },
+            formatter: function () {
+              return this.value
+            }
+          }
+
+      },
+       tooltip: {
+            shared: true,
+            useHTML: true,
+            headerFormat: '<div class="newTip"><big>{point.key}</big>' + '<br/>',
+            pointFormatter: function(){ return this.y+'% -- '+length[this.category]+' years exp';},
+            footerFormat: '</div>',
+            valueDecimals: 1
+        },
+      yAxis: {
+          gridLineInterpolation: 'polygon',
+          min: 0,
+          max: 100,
+          tickInterval: 20,
+      minorTickInterval: 10,
+      labels:{
+          x: entry_count,
+        style: {
+          color: 'white',
+        //   textShadow:'1px 1px 0px #ffffff',
+        //   display: "inline-block"
+          }       
+      }
+      
+      },
+      
+      plotOptions: {
+        series: {
+            pointStart: 0,
+            pointInterval: 1,
+            label: {
+                enabled: false
+            },
+        },
+        column: {
+            pointPadding: 0,
+            groupPadding: 0
+        }
+      },
+  
+    series: [{
+          type: 'area',
+          color: '#d9d4f7',//'#4228d6',
+        //   name: 'Not Very Important Skillz',
+          data: vals,
+          pointPlacement: "off",
+          showInLegend:false,
+
+        marker: {
+                fillColor: '#FFFFFF',
+                lineWidth: 2,
+                lineColor: null // inherit from series
+            }
+        
+      }],
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    align: 'center',
+                    verticalAlign: 'bottom',
+                    layout: 'horizontal'
+                },
+                yAxis: {
+                    labels: {
+                        align: 'left',
+                        x: 0,
+                        y: -5
+                    },
+                    title: {
+                        text: null
+                    }
+                },
+                subtitle: {
+                    text: null
+                },
+                credits: {
+                    enabled: false
+                }
+            }
+        }]
+    }
+  });
+
+
+
+
+
+
+
+    
+    $('#skillz2').highcharts({
+        
+      chart: {
+          polar: true,
+          type: 'line'
+      },
+      credits: {
+      enabled: false
+    },
+      title: {
+          text: ''
+      },
+      
+      pane: {
+          startAngle: 0,
+          endAngle: 360
+      },
+
+  
+      xAxis: {
+        type: 'category',
+          tickInterval: 1,
+          categories: ['Trivia','Spelling with Spellcheck','Tripping','Eating', 'FIFA', "Dark Souls", 'Google Search','Spelling without Spellcheck', 'Dancing', 'Mario Kart', 'Super Smash Bros: Melee', 'Cooking' ],
+          min: 0,
+          max: 12,
+          tickmarkPlacement: 'on',
+
+          lineWidth: 0,
+          labels: {
+            formatter: function () {
+              return this.value
+            }
+          },
+
+      },
+       tooltip: {
+            shared: true,
+            useHTML: true,
+            headerFormat: '<div class="newTip"><big>{point.key}</big>' + '<br/>',
+            pointFormat: '{point.y} / 5.0',
+            footerFormat: '</div>',
+            valueDecimals: 1
+        },
+      yAxis: {
+          gridLineInterpolation: 'polygon',
+          min: 0,
+          max: 5,
+          tickInterval: 1,
+      minorTickInterval: 0.5,
+
+      labels:{
+
+          x: 12,
+        style: {
+          color: '#000000',
+          textShadow:'1px 1px 0px #ffffff',
+          display: "inline-block"
+          }       
+      },
+      
+      },
+      
+      plotOptions: {
+          series: {
+              pointStart: 0,
+              pointInterval: 1,
+
+          },
+          column: {
+              pointPadding: 0,
+              groupPadding: 0
+          }
+      },
+  
+      series: [{
+          type: 'area',
+          color:'#d82958',
+          name: 'Actually Important Skillz',
+          data: [4.5, 4.1, 4.3, 4.7, 3.4, 4.3,  4.8, 2.7, 1.2, 3, 4.3 , 4.25],
+          pointPlacement: "off"
+      }]
+  });
+});
+
+
+</script>
+
+
