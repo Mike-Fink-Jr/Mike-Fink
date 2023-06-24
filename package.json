@@ -23,7 +23,7 @@
     "lodash": "^4.17.21",
     "mailgun-js": "^0.22.0",
     "mime": ">=1.4.1",
-    "mongodb": "^3.4.1",
+    "mongodb": "^3.7.4",
     "request": "^2.83.0"
   },
   "devDependencies": {
